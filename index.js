@@ -6,7 +6,7 @@ import gradient from 'gradient-string';
 import figlet from 'figlet';
 import { createSpinner } from 'nanospinner';
 import clipboardy from 'clipboardy';
-import path from 'path';
+import fetch from 'node-fetch';
 import * as fs from 'fs';
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -49,9 +49,20 @@ async function vsCode() {
         const spinner = createSpinner('Loading VSCode...').start();
         await sleep();
         spinner.stop();
-        fs.readFile('./vssnippets.json', 'utf8', (err, data) => {
-            clipboardy.writeSync(data);
-        });
+
+        if (vs_choice === 'Snippets') {
+            let url =
+                'https://raw.githubusercontent.com/sumeetmaharjan/VSCode-Angular-TypeScript-Snippets-Minimal/master/src/snippets.json';
+            let settings = { method: 'GET' };
+
+            fetch(url, settings)
+                .then((res) => res.json())
+                .then((data) => {
+                    clipboardy.writeSync(JSON.stringify(data));
+                })
+                .catch((err) => console.log('fetch error', err));
+        } else if (vs_choice === 'Pref Json') {
+        }
     }
 }
 

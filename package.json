@@ -1,25 +1,31 @@
 {
-  "name": "merosetting",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sumeetmaharjan/merosetting.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sumeetmaharjan/merosetting/issues"
-  },
-  "homepage": "https://github.com/sumeetmaharjan/merosetting#readme",
-  "dependencies": {
-    "chalk": "^5.0.1"
-  }
+    "name": "merosetting",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sumeetmaharjan/merosetting.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sumeetmaharjan/merosetting/issues"
+    },
+    "homepage": "https://github.com/sumeetmaharjan/merosetting#readme",
+    "bin": "./index.js",
+    "dependencies": {
+        "chalk": "^5.0.1",
+        "clipboardy": "^3.0.0",
+        "figlet": "^1.5.2",
+        "gradient-string": "^2.0.1",
+        "inquirer": "^9.0.1",
+        "nanospinner": "^1.1.0"
+    }
 }

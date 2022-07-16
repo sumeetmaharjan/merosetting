@@ -1,25 +1,17 @@
 #!/usr/bin/env node
 
-import chalk from 'chalk';
 import inquirer from 'inquirer';
-import gradient from 'gradient-string';
-import figlet from 'figlet';
 import { createSpinner } from 'nanospinner';
-import * as fs from 'fs';
 import vsCode from './src/vscodeoption.js';
 import vsStudio from './src/vsoption.js';
 import { sleep } from './src/common.js';
 
 let choice;
 
-console.log(chalk.green('Starting app in dev mode...'));
-
 await sleep();
 await main();
 await vsCode(choice);
 await vsStudio(choice);
-
-printMessage();
 
 async function main() {
     const answer = await inquirer.prompt({
@@ -43,10 +35,4 @@ async function loadSpinner(value) {
     } else {
         process.exit(1);
     }
-}
-
-function printMessage() {
-    figlet(choice, (err, data) => {
-        console.log(gradient.pastel.multiline(data) + '\n\n');
-    });
 }

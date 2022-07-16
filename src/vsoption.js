@@ -1,11 +1,8 @@
-import clipboardy from 'clipboardy';
-import fetch from 'node-fetch';
-import inquirer from 'inquirer';
-import { createSpinner } from 'nanospinner';
-
+import { displayMessage } from './common';
 
 async function vsStudio(choice) {
-    if (choice === 'Visual Studio Code') {
+    if (choice === 'Visual Studio') {
+        displayMessage('Visual Studio');
     }
 }
 

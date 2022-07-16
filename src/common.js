@@ -11,5 +11,9 @@ const fetchData = (url, setting) => {
         })
         .catch((err) => console.log('fetch error', err));
 };
-
-export { sleep, fetchData };
+const displayMessage = (message) => {
+    figlet(message, (err, data) => {
+        console.log(gradient.pastel.multiline(data) + '\n\n');
+    });
+};
+export { sleep, fetchData, displayMessage };
